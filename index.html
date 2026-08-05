@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Huokaing Tharoth - Curriculum Vitae</title>
+  <style>
+    :root {
+      --primary: #1e293b;
+      --secondary: #0f766e;
+      --text: #334155;
+      --text-light: #64748b;
+      --bg-light: #f8fafc;
+      --border: #e2e8f0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text);
+      background-color: #f1f5f9;
+      line-height: 1.5;
+      padding: 20px;
+    }
+
+    .action-bar {
+      max-width: 850px;
+      margin: 0 auto 20px auto;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .btn-print {
+      background-color: var(--secondary);
+      color: #ffffff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 14px;
+      font-weight: 600;
+      border-radius: 6px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.2s ease;
+    }
+
+    .btn-print:hover {
+      background-color: #0d5d57;
+    }
+
+    .cv-container {
+      max-width: 850px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+
+    /* Header */
+    header {
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 20px;
+      margin-bottom: 24px;
+    }
+
+    .header-main {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    h1 {
+      font-size: 28px;
+      color: var(--primary);
+      letter-spacing: -0.5px;
+      margin-bottom: 4px;
+    }
+
+    .subtitle {
+      font-size: 16px;
+      color: var(--secondary);
+      font-weight: 600;
+    }
+
+    .contact-info {
+      font-size: 13px;
+      color: var(--text-light);
+      text-align: right;
+      line-height: 1.6;
+    }
+
+    .contact-info a {
+      color: var(--secondary);
+      text-decoration: none;
+    }
+
+    /* Layout Sections */
+    section {
+      margin-bottom: 24px;
+    }
+
+    h2 {
+      font-size: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--primary);
+      border-bottom: 1.5px solid var(--primary);
+      padding-bottom: 4px;
+      margin-bottom: 14px;
+    }
+
+    p {
+      font-size: 14px;
+      color: var(--text);
+    }
+
+    /* Lists & Grids */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+    }
+
+    .skill-category {
+      background: var(--bg-light);
+      padding: 10px 12px;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+    }
+
+    .skill-category strong {
+      display: block;
+      font-size: 13px;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+
+    .skill-category span {
+      font-size: 13px;
+      color: var(--text-light);
+    }
+
+    /* Experience & Projects */
+    .item {
+      margin-bottom: 16px;
+    }
+
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 4px;
+    }
+
+    .item-title {
+      font-weight: 700;
+      font-size: 15px;
+      color: var(--primary);
+    }
+
+    .item-subtitle {
+      font-style: italic;
+      color: var(--secondary);
+      font-size: 14px;
+    }
+
+    .item-date {
+      font-size: 12px;
+      color: var(--text-light);
+      font-weight: 500;
+    }
+
+    ul.bullets {
+      list-style-type: disc;
+      margin-left: 18px;
+      font-size: 13.5px;
+      color: var(--text);
+    }
+
+    ul.bullets li {
+      margin-bottom: 4px;
+    }
+
+    /* Print Optimization Rules */
+    @media print {
+      body {
+        background-color: #ffffff;
+        padding: 0;
+      }
+
+      .action-bar {
+        display: none !important;
+      }
+
+      .cv-container {
+        box-shadow: none;
+        padding: 0;
+        max-width: 100%;
+        border-radius: 0;
+      }
+
+      a {
+        text-decoration: none;
+        color: var(--text) !important;
+      }
+
+      section {
+        page-break-inside: avoid;
+      }
+
+      .item {
+        page-break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Print Action Bar -->
+  <div class="action-bar">
+    <button class="btn-print" onclick="window.print()">
+      <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+        <path d="M2.5 8a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z"/>
+        <path d="M5 1a2 2 0 0 0-2 2v2H2a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1v1a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-1h1a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-1V3a2 2 0 0 0-2-2H5zM4 3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2H4V3zm1 5a2 2 0 0 0-2 2v1H2a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v-1a2 2 0 0 0-2-2H5zm7 2v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-3h8z"/>
+      </svg>
+      Print / Save as PDF
+    </button>
+  </div>
+
+  <!-- CV Document -->
+  <div class="cv-container">
+    
+    <!-- Header -->
+    <header>
+      <div class="header-main">
+        <div>
+          <h1>Huokaing Tharoth</h1>
+          <div class="subtitle">Cybersecurity Officer & Infrastructure Architect</div>
+        </div>
+        <div class="contact-info">
+          <div>Phnom Penh, Cambodia</div>
+          <div>Phone: +855 (0) 12 345 678</div>
+          <div>Email: contact@domain.com</div>
+          <div>GitHub: <a href="https://github.com/tharahuokaing" target="_blank">github.com/tharahuokaing</a></div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Professional Summary -->
+    <section>
+      <h2>Professional Summary</h2>
+      <p>
+        Results-driven Cybersecurity Expert and Infrastructure Architect with extensive experience in vulnerability assessment, system penetration testing, and enterprise network defense. Proficient in web development, database management, and building secure financial and POS architectures. Adept at steering technical strategy, managing infrastructure capital allocation, and aligning cybersecurity engineering with core organizational goals.
+      </p>
+    </section>
+
+    <!-- Technical Skills -->
+    <section>
+      <h2>Core Technical Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <strong>Cybersecurity & Defense</strong>
+          <span>Vulnerability Assessment, Penetration Testing, Network Security, Legacy System Auditing (Y2K38)</span>
+        </div>
+        <div class="skill-category">
+          <strong>Software Engineering</strong>
+          <span>JavaScript (Node.js), Python, SQL, HTML5/CSS3, RESTful APIs, Interactive Web Graphics (Three.js)</span>
+        </div>
+        <div class="skill-category">
+          <strong>Infrastructure & Systems</strong>
+          <span>System Architecture, SQLite/Database Administration, Linux Administration, Terminal Application Design</span>
+        </div>
+        <div class="skill-category">
+          <strong>Management & Strategy</strong>
+          <span>Capital Allocation, Security Logistics, Brand Positioning, Infrastructure Development</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section>
+      <h2>Professional Experience</h2>
+      
+      <div class="item">
+        <div class="item-header">
+          <span class="item-title">Chief Cybersecurity Officer & Head of Marketing</span>
+          <span class="item-date">Present</span>
+        </div>
+        <div class="item-subtitle">Enterprise ISP & Financial Operations</div>
+        <ul class="bullets">
+          <li>Oversee global network defense, application security, and transaction security across enterprise systems.</li>
+          <li>Drive strategic brand positioning and technical alignment for new telecom and financial service launches.</li>
+          <li>Conduct ongoing security reviews and infrastructure hardening to prevent unauthorized intrusions and data leaks.</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <div class="item-header">
+          <span class="item-title">Lead Infrastructure Architect</span>
+          <span class="item-date">Previous</span>
+        </div>
+        <div class="item-subtitle">ISP Infrastructure Division</div>
+        <ul class="bullets">
+          <li>Managed capital allocation and infrastructure deployment for high-availability ISP network operations.</li>
+          <li>Engineered system security logistics and system monitoring tooling to ensure high uptime and resilience.</li>
+          <li>Designed and tested vulnerability remediation strategies for core network hardware and backend databases.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Key Projects -->
+    <section>
+      <h2>Featured Engineering Projects</h2>
+      
+      <div class="item">
+        <div class="item-header">
+          <span class="item-title">Solar Cyber Empire Dashboard & Web Simulations</span>
+        </div>
+        <ul class="bullets">
+          <li>Built a centralized web portal and custom 3D web simulation incorporating interactive celestial graphics and physics engine logic.</li>
+          <li>Integrated computational simulations demonstrating 32-bit time overflow scenarios (Year 2038 problem) and defense mitigations.</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <div class="item-header">
+          <span class="item-title">TharaBank Financial Application</span>
+        </div>
+        <ul class="bullets">
+          <li>Developed a Python terminal application modeling core banking logic, multi-account ledger routing, and transactional flow verification.</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <div class="item-header">
+          <span class="item-title">Enterprise Restaurant POS System</span>
+        </div>
+        <ul class="bullets">
+          <li>Architected a full-stack Point-of-Sale management tool with a Node.js backend and persistent SQLite database logic for inventory tracking.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section>
+      <h2>Education & Continuous Learning</h2>
+      <div class="item">
+        <div class="item-header">
+          <span class="item-title">Self-Directed Technical Specialization</span>
+        </div>
+        <div class="item-subtitle">Independent Study & Advanced Online Certification Paths</div>
+        <ul class="bullets">
+          <li>Cybersecurity Analysis, Advanced Penetration Testing, and Systems Architecture.</li>
+          <li>Machine Learning Fundamentals, Applied Data Science, and Web Application Security.</li>
+        </ul>
+      </div>
+    </section>
+
+  </div>
+
+</body>
+</html>
